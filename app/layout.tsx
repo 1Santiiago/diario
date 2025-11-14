@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import ClerkWrapper from "../components/clerkComponents";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,10 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt">
-      <body>
-        <ClerkWrapper>{children}</ClerkWrapper>
-      </body>
-    </html>
+    // Use o ClerkProvider oficial do @clerk/nextjs
+    // Ele gerencia as chaves e o estado de autenticação automaticamente.
+    <ClerkProvider>
+      <html lang="pt">
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

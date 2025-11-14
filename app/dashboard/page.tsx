@@ -15,7 +15,7 @@ export default async function DashboardPage() {
   );
 
   return (
-    <div className="p-6">
+    <div className="p-8g">
       <h1 className="text-2xl font-semibold">Dashboard</h1>
       <p>Bem-vindo, usuário {userId}</p>
     </div>

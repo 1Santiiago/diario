@@ -1,14 +1,13 @@
 import { auth } from "@clerk/nextjs/server";
 import { createClient } from "@supabase/supabase-js";
 import { redirect } from "next/navigation";
+export const dynamic = "force-dynamic";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
   const { userId }: any = auth();
   if (!userId) {
     redirect("/sign-in");
   }
-
-  //criando login no supabse
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,

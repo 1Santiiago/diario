@@ -5,10 +5,34 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-muted/20">
+    <div
+      className="
+        min-h-screen 
+        bg-linear-to-br from-blue-50 via-purple-50 to-white
+        dark:bg-linear-to-br dark:from-gray-900 dark:via-black dark:to-gray-900
+        flex flex-col
+      "
+    >
       {/* NAVBAR */}
-      <header className="flex justify-between items-center px-6 py-4 bg-background/60 backdrop-blur border-b">
-        <h1 className="text-xl font-semibold tracking-tight">
+      <header
+        className="
+          sticky top-0 z-20 
+          w-full 
+          backdrop-blur-lg 
+          bg-white/40 dark:bg-black/40 
+          border-b border-black/10 dark:border-white/10
+          px-6 py-4 
+          flex justify-between items-center
+        "
+      >
+        <h1
+          className="
+            text-xl font-semibold 
+            bg-linear-to-r from-blue-600 to-purple-600 
+            bg-clip-text text-transparent
+            tracking-tight
+          "
+        >
           Diário de Leitura
         </h1>
 
@@ -27,14 +51,28 @@ export default function Home() {
 
       {/* MAIN */}
       <main className="flex flex-1 items-center justify-center px-4">
-        <Card className="max-w-md w-full shadow-md">
+        <Card
+          className="
+            max-w-md w-full 
+            shadow-xl 
+            border border-black/10 dark:border-white/10 
+            backdrop-blur-xl 
+            bg-white/60 dark:bg-black/60
+          "
+        >
           <CardHeader>
-            <CardTitle className="text-center text-2xl font-bold">
+            <CardTitle
+              className="
+                text-center text-3xl font-bold 
+                bg-linear-to-r from-blue-600 to-purple-600 
+                bg-clip-text text-transparent
+              "
+            >
               Bem-vindo ao seu Diário 📚
             </CardTitle>
           </CardHeader>
 
-          <CardContent className="text-center text-muted-foreground">
+          <CardContent className="text-center text-gray-700 dark:text-gray-300">
             <p>
               Registre suas leituras, acompanhe seu progresso e descubra novas
               histórias.
@@ -50,7 +88,7 @@ export default function Home() {
               <SignedIn>
                 <Link href="/dashboard">
                   <Button className="w-full" variant="secondary">
-                    Ir para dashboard
+                    Ir para o Dashboard
                   </Button>
                 </Link>
               </SignedIn>

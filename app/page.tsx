@@ -1,6 +1,7 @@
 import { UserButton, SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -47,9 +48,11 @@ export default function Home() {
               </SignedOut>
 
               <SignedIn>
-                <Button className="w-full" variant="secondary">
-                  Ir para dashboard
-                </Button>
+                <Link href="/dashboard">
+                  <Button className="w-full" variant="secondary">
+                    Ir para dashboard
+                  </Button>
+                </Link>
               </SignedIn>
             </div>
           </CardContent>
